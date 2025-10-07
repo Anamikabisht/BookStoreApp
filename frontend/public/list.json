@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Harper Lee",
+    "title": "To Kill a Mockingbird",
+    "category": "Classic Fiction",
+    "price": 50,
+    "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
+  },
+  {
+    "id": 2,
+    "name": "George Orwell",
+    "title": "1984",
+    "category": "Dystopian",
+    "price": 100,
+    "image": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383"
+  },
+  {
+    "id": 3,
+    "name": "J.K. Rowling",
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "category": "Fantasy",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+  },
+  {
+    "id": 4,
+    "name": "Yuval Noah Harari",
+    "title": "Sapiens: A Brief History of Humankind",
+    "category": "Non-Fiction",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "id": 5,
+    "name": "Paulo Coelho",
+    "title": "The Alchemist",
+    "category": "Philosophical Fiction",
+    "price": 50,
+    "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93"
+  },
+  {
+    "id": 6,
+    "name": "Michelle Obama",
+    "title": "Becoming",
+    "category": "Biography",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383"
+  },
+  {
+    "id": 7,
+    "name": "Mark Manson",
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "category": "Self-Help",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d"
+  },
+  {
+    "id": 8,
+    "name": "Dan Brown",
+    "title": "The Da Vinci Code",
+    "category": "Thriller",
+    "price": 100,
+    "image": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+  },
+  {
+    "id": 9,
+    "name": "Stephen King",
+    "title": "The Shining",
+    "category": "Horror",
+    "price": 100,
+    "image": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383"
+  },
+  {
+    "id": 10,
+    "name": "F. Scott Fitzgerald",
+    "title": "The Great Gatsby",
+    "category": "Classic Fiction",
+    "price": 50,
+    "image": "https://images.unsplash.com/photo-1496104679561-38d6b3b3ef2c"
+  },
+  {
+    "id": 11,
+    "name": "Homer",
+    "title": "The Odyssey",
+    "category": "Epic Poetry",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765"
+  },
+  {
+    "id": 12,
+    "name": "Margaret Atwood",
+    "title": "The Handmaid's Tale",
+    "category": "Dystopian",
+    "price": 75,
+    "image": "https://images.unsplash.com/photo-1551022372-5c78f2c8c79c"
+  },
+  {
+    "id": 13,
+    "name": "J.R.R. Tolkien",
+    "title": "The Hobbit",
+    "category": "Fantasy",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+  },
+  {
+    "id": 14,
+    "name": "Ernest Hemingway",
+    "title": "The Old Man and the Sea",
+    "category": "Classic Fiction",
+    "price": 60,
+    "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93"
+  },
+  {
+    "id": 15,
+    "name": "Gabriel García Márquez",
+    "title": "One Hundred Years of Solitude",
+    "category": "Magic Realism",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765"
+  }
+]

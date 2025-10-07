@@ -1,0 +1,80 @@
+import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+
+function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) => console.log(data)
+
+  return (
+    <div>
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box mt-0 pt-0">
+          {/* Close Button */}
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn">Close</button>
+            </form>
+          </div>
+
+          {/* Login Form */}
+          <form onSubmit={handleSubmit(onSubmit)} className="text-center">
+            <h3 className="font-bold text-2xl pb-5">Please Login</h3>
+
+            {/* Email Field */}
+            <div className="mt-2 text-left">
+              <label className="text-xl">Email</label>
+              <input
+                {...register('email', { required: true })}
+                type="email"
+                placeholder="Enter your email"
+                className="p-3 w-full mt-1 outline-none text-lg border rounded-md"
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">Email is required</p>
+              )}
+            </div>
+
+            {/* Password Field */}
+            <div className="mt-3 text-left">
+              <label className="text-xl">Password</label>
+              <input
+                {...register('password', { required: true })}
+                type="password"
+                placeholder="Enter your password"
+                className="p-3 w-full mt-1 outline-none text-lg border rounded-md"
+              />
+              {errors.password && (
+                <p className="text-red-500 text-sm mt-1">Password is required</p>
+              )}
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row justify-between items-center pt-5 gap-3">
+              <button
+                type="submit"
+                className="px-5 py-2 text-lg font-semibold bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition duration-300"
+              >
+                Login
+              </button>
+              <p className="text-lg">
+                Not registered?{' '}
+                <Link to="/signup">
+                  <span className="text-blue-400 underline cursor-pointer">
+                    Signup
+                  </span>
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
+      </dialog>
+    </div>
+  )
+}
+
+export default Login
