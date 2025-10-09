@@ -32,7 +32,7 @@
 
 ## Tech Stack
 
-- **Frontend:** React, React Router, React Hook Form, DaisyUI, TailwindCSS
+### Frontend
 - **State Management:** React Context API
 - **Notifications:** react-hot-toast
 - **HTTP Requests:** Axios
