@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
+import axios from 'axios'
+import { useAuth } from '../context/AuthProvider'
 
 function Login() {
   const {
@@ -8,24 +11,42 @@ function Login() {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const [authUser, setAuthUser] = useAuth()
+
+  const onSubmit = async (data) => {
+    const userData = {
+      email: data.email,
+      password: data.password,
+    }
+
+    try {
+      const res = await axios.post("http://localhost:4001/user/login", userData)
+      if (res) {
+        toast.success('Logged in successfully')
+        const modal = document.getElementById('my_modal_5')
+        if (modal) modal.close()
+
+        localStorage.setItem("Users", JSON.stringify(res.data.user))
+        setAuthUser(res.data.user) // ✅ Update context
+      }
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Login failed")
+    }
+  }
 
   return (
     <div>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box mt-0 pt-0">
-          {/* Close Button */}
           <div className="modal-action">
             <form method="dialog">
               <button className="btn">Close</button>
             </form>
           </div>
 
-          {/* Login Form */}
           <form onSubmit={handleSubmit(onSubmit)} className="text-center">
             <h3 className="font-bold text-2xl pb-5">Please Login</h3>
 
-            {/* Email Field */}
             <div className="mt-2 text-left">
               <label className="text-xl">Email</label>
               <input
@@ -39,7 +60,6 @@ function Login() {
               )}
             </div>
 
-            {/* Password Field */}
             <div className="mt-3 text-left">
               <label className="text-xl">Password</label>
               <input
@@ -53,7 +73,6 @@ function Login() {
               )}
             </div>
 
-            {/* Buttons */}
             <div className="flex flex-col sm:flex-row justify-between items-center pt-5 gap-3">
               <button
                 type="submit"
