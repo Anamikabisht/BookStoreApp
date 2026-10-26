@@ -1,68 +1,141 @@
-# BookHooked
+# 📚 BookHooked — Online Book Store
 
-**BookHooked** is a modern React web application that provides a platform for users to explore courses, contact the team, and access user-specific content after authentication. The project uses **React**, **React Router**, **DaisyUI**, **React Hook Form**, and **react-hot-toast** for a responsive and interactive experience.
+BookHooked is a full-stack web application built with the MERN stack that provides a simple platform for browsing books, exploring course content, and managing user accounts. It features a responsive interface and a backend API for handling application data and user interactions.
+
+## ✨ Features
+
+- **User Authentication** — Sign up, log in, and log out.
+- **Book Browsing** — Browse and explore available books.
+- **Book Details** — View information about individual books.
+- **Search** — Find books using the search functionality.
+- **Cart Management** — Add and manage books in your cart.
+- **Wishlist** — Save books for later.
+- **Protected Routes** — Restrict access to selected pages based on authentication.
+- **Responsive UI** — Navigate the application across different screen sizes.
+- **REST API** — Backend endpoints for user and book-related operations.
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- React.js
+- JavaScript
+- Tailwind CSS and DaisyUI
+- React Router
+- Axios
+- React Hook Form
+
+**Backend**
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+**Tools & Deployment**
+- Git and GitHub
+- Vite
+- Netlify (frontend deployment configuration)
+- Render (backend deployment configuration)
+
+## 📁 Project Structure
+
+```text
+BookHooked/
+├── backend/
+│   ├── controller/
+│   ├── middleware/
+│   ├── model/
+│   ├── route/
+│   ├── index.js
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── Course/
+│   │   ├── Home/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+├── render.yaml
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have installed:
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/) or a MongoDB Atlas database
+- npm
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Anamikabisht/BookStoreApp.git
+cd BookStoreApp
+```
+
+### 2. Set up the backend
+
+```bash
+cd backend
+npm install
+```
+
+Configure the backend environment variables in a `.env` file using the variable names expected by the backend code. Add your MongoDB connection string and any required authentication secrets.
+
+Start the backend using the script defined in `backend/package.json`:
+
+```bash
+npm start
+```
+
+### 3. Set up the frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Vite will display the local development URL in the terminal. Open that URL in your browser.
+
+## ⚙️ Configuration
+
+Before running the application, configure:
+- A valid MongoDB connection.
+- Required backend environment variables.
+- The frontend API base URL, if it is configurable in the project.
+- Appropriate environment variables for production deployment.
+
+**Security note:** Never commit database credentials, authentication secrets, or private API keys to GitHub.
+
+## 🌐 Deployment
+
+The repository includes deployment configuration for Render and Netlify.
+
+For deployment:
+1. Deploy the backend and configure its environment variables.
+2. Connect the frontend to the deployed backend API.
+3. Deploy the frontend and configure the correct API URL.
+4. Configure CORS and any required production settings.
+5. Verify authentication and book-related functionality on the deployed application.
+
+## 🎯 Project Objective
+
+The objective of BookHooked is to build a practical full-stack web application while applying concepts such as component-based UI development, REST API integration, database modelling, authentication, routing, and state management.
+
+## 👩‍💻 Author
+
+**Anamika Bisht**
+
+- GitHub: [Anamikabisht](https://github.com/Anamikabisht)
 
 ---
 
-## Deployment
-
-The app is configured to deploy as a Netlify frontend and a Render API, backed by MongoDB Atlas.
-
-### Backend (Render)
-
-1. Create a MongoDB Atlas database and allow the Render service to connect to it.
-2. Connect this project to Render and create a Blueprint from `render.yaml` in the project root.
-3. Set the Blueprint's `MONGODB_URI` to the Atlas connection string, `JWT_SECRET` to a unique secret, and `CLIENT_ORIGIN` to the Netlify site's origin (for example, `https://your-site.netlify.app`).
-4. Deploy the service and verify its `/health` endpoint returns `{"status":"ok"}`.
-
-### Frontend (Netlify)
-
-1. Connect the project to Netlify and set the base directory to `frontend`.
-2. Set the `VITE_API_URL` environment variable to the deployed Render service URL, without a trailing slash.
-3. Deploy. The included `frontend/netlify.toml` configures the Vite build and client-side route fallback.
-
-For local development, the frontend defaults to `http://localhost:4001`; the backend reads its MongoDB URI and JWT secret from `backend/.env`.
-
-## Features
-
-- **User Authentication**
-  - Signup and Login functionality.
-  - Authenticated users see a **Logout** button.
-  - User session persists using `localStorage`.
-
-- **Protected Routes**
-  - Certain routes like `/course` are only accessible to logged-in users.
-  - Unauthenticated users are redirected to the signup page.
-
-- **Responsive Navbar**
-  - Mobile-friendly dropdown menu.
-  - Dynamic rendering of Login/Logout based on authentication state.
-
-- **UI Components**
-  - Built with **DaisyUI** for ready-to-use components.
-  - Styled buttons, modals, forms, and alerts.
-
-- **Interactive Forms**
-  - **React Hook Form** for form validation.
-  - Error messages displayed for invalid inputs.
-  - Toast notifications for success/error events using **react-hot-toast**.
-
----
-
-## Tech Stack
-
-### Frontend
-- **State Management:** React Context API
-- **Notifications:** react-hot-toast
-- **HTTP Requests:** Axios
-- **Styling:** TailwindCSS + DaisyUI
-
-### Backend
-- **Node.js** – JavaScript runtime  
-- **Express.js** – REST API framework  
-- **MongoDB** – Database for storing user data  
-- **Mongoose** – MongoDB object modeling  
-- **Axios** – HTTP client for API requests  
-
-
----
+*Built with React, Node.js, Express, and MongoDB.*
