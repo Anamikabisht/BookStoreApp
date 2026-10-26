@@ -1,15 +1,19 @@
-const Book=require('../model/book.model.js')
+const { Book } = require('../model/book.model.js');
+const { defaultBooks } = require('../model/book.model.js');
 
-const getBook=async (req,res)=>{
-    try{
-        const book=await Book.find()
-        res.status(200).json(book)
+const getBook = async (req, res) => {
+    try {
+        let book = await Book.find();
 
+        if (!book.length) {
+            book = await Book.insertMany(defaultBooks);
+        }
+
+        res.status(200).json(book);
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json({ message: 'Failed to fetch books' });
     }
-    catch(err){
-       console.log(err.message);
-       res.status(500).json(err)
-    }
-}
+};
 
-module.exports=getBook
+module.exports = getBook;

@@ -118,5 +118,167 @@
     "category": "Magic Realism",
     "price": 0,
     "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765"
+  },
+  {
+    "id": 16,
+    "name": "Frances Hardinge",
+    "title": "The Lie Tree",
+    "category": "Young Adult",
+    "price": 80,
+    "image": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+  },
+  {
+    "id": 17,
+    "name": "Miyamoto Musashi",
+    "title": "The Book of Five Rings",
+    "category": "Philosophy",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1519682337058-a94d519337bc"
+  },
+  {
+    "id": 18,
+    "name": "Jane Austen",
+    "title": "Pride and Prejudice",
+    "category": "Romance",
+    "price": 45,
+    "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f"
+  },
+  {
+    "id": 19,
+    "name": "Virginia Woolf",
+    "title": "Mrs Dalloway",
+    "category": "Modernist",
+    "price": 70,
+    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15"
+  },
+  {
+    "id": 20,
+    "name": "Agatha Christie",
+    "title": "Murder on the Orient Express",
+    "category": "Mystery",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9"
+  },
+  {
+    "id": 21,
+    "name": "Khaled Hosseini",
+    "title": "The Kite Runner",
+    "category": "Historical Fiction",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
+  },
+  {
+    "id": 22,
+    "name": "Marie Curie",
+    "title": "Radioactivity",
+    "category": "Science",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d"
+  },
+  {
+    "id": 23,
+    "name": "Eckhart Tolle",
+    "title": "The Power of Now",
+    "category": "Spirituality",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+  },
+  {
+    "id": 24,
+    "name": "Maya Angelou",
+    "title": "I Know Why the Caged Bird Sings",
+    "category": "Memoir",
+    "price": 60,
+    "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570"
+  },
+  {
+    "id": 25,
+    "name": "Arthur Conan Doyle",
+    "title": "The Hound of the Baskervilles",
+    "category": "Mystery",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+    "description": "Sherlock Holmes investigates a mysterious family curse on the English moors."
+  },
+  {
+    "id": 26,
+    "name": "Mary Shelley",
+    "title": "Frankenstein",
+    "category": "Gothic Fiction",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1519682337058-a94d519337bc",
+    "description": "A pioneering gothic novel about ambition, responsibility, and what makes us human."
+  },
+  {
+    "id": 27,
+    "name": "Chinua Achebe",
+    "title": "Things Fall Apart",
+    "category": "Historical Fiction",
+    "price": 70,
+    "image": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da",
+    "description": "A landmark novel tracing a community's traditions and transformation."
+  },
+  {
+    "id": 28,
+    "name": "Aldous Huxley",
+    "title": "Brave New World",
+    "category": "Dystopian",
+    "price": 75,
+    "image": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d",
+    "description": "A classic speculative novel about technology, conformity, and individual freedom."
+  },
+  {
+    "id": 29,
+    "name": "Louisa May Alcott",
+    "title": "Little Women",
+    "category": "Classic Fiction",
+    "price": 50,
+    "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f",
+    "description": "Four sisters navigate family, ambition, and adulthood in nineteenth-century America."
+  },
+  {
+    "id": 30,
+    "name": "Octavia E. Butler",
+    "title": "Kindred",
+    "category": "Science Fiction",
+    "price": 85,
+    "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765",
+    "description": "A modern woman is pulled through time into a history she must confront firsthand."
+  },
+  {
+    "id": 31,
+    "name": "Tara Westover",
+    "title": "Educated",
+    "category": "Memoir",
+    "price": 90,
+    "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
+    "description": "A memoir about self-invention, education, and finding a place in the world."
+  },
+  {
+    "id": 32,
+    "name": "Robin Wall Kimmerer",
+    "title": "Braiding Sweetgrass",
+    "category": "Nature",
+    "price": 0,
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "description": "An invitation to see the natural world through both scientific and Indigenous knowledge."
+  },
+  {
+    "id": 33,
+    "name": "James Clear",
+    "title": "Atomic Habits",
+    "category": "Self-Help",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d",
+    "description": "A practical guide to building lasting habits through small, consistent improvements."
+  },
+  {
+    "id": 34,
+    "name": "Ray Bradbury",
+    "title": "Fahrenheit 451",
+    "category": "Science Fiction",
+    "price": 60,
+    "image": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383",
+    "description": "A fireman begins to question a society that has outlawed books and independent thought."
   }
 ]

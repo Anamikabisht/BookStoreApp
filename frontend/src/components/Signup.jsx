@@ -1,34 +1,29 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import axios from 'axios'
+import api from '../utils/api'
 import toast, { Toaster } from 'react-hot-toast'
-import { useAuth } from '../context/AuthProvider'
+import { useAuth } from '../context/AuthContext'
 
 function Signup() {
   const navigate = useNavigate()
-  const [authUser, setAuthUser] = useAuth() // ✅ update context
+  const [, setAuthUser] = useAuth() // ✅ update context
 
   const { register, handleSubmit, formState: { errors } } = useForm()
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post('http://localhost:4001/user/signup', {
-        name: data.name,
-        email: data.email,
+      const res = await api.post('/user/signup', {
+        name: data.name.trim(),
+        email: data.email.trim().toLowerCase(),
         password: data.password,
       })
 
-      if (res.data) {
-        toast.success('Signed up successfully')
-
-        // Save to localStorage
+      if (res.data?.token) {
+        localStorage.setItem('token', res.data.token)
         localStorage.setItem('Users', JSON.stringify(res.data.user))
-
-        // ✅ Update auth context so Navbar shows Logout
         setAuthUser(res.data.user)
-
-        // Redirect to home page
+        toast.success('Signed up successfully')
         navigate('/')
       }
     } catch (err) {

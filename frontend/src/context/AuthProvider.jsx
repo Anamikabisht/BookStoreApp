@@ -1,13 +1,18 @@
-import React, { createContext, useContext, useState } from "react";
-
-export const AuthContext = createContext();
+import React, { useState } from 'react';
+import { AuthContext } from './AuthContext';
 
 export default function AuthProvider({ children }) {
-  let initialAuthUser;
+  let initialAuthUser = null;
+
   try {
-    const storedUser = localStorage.getItem("Users");
+    const storedUser = localStorage.getItem('Users');
+    const storedToken = localStorage.getItem('token');
     initialAuthUser = storedUser ? JSON.parse(storedUser) : null;
-  } catch (e) {
+
+    if (initialAuthUser && !storedToken) {
+      initialAuthUser = null;
+    }
+  } catch {
     initialAuthUser = null;
   }
 
@@ -19,5 +24,3 @@ export default function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
-
-export const useAuth = () => useContext(AuthContext);

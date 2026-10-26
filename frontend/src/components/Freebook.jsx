@@ -1,31 +1,36 @@
-import React from 'react'
-import list from '../../public/list.json'
+import React, { useState, useEffect } from 'react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 import Cards from './Cards'
-import axios from 'axios'
-import { useState,useEffect } from 'react'
+import api from '../utils/api'
+import fallbackBooks from '../../public/list.json'
 
 function Freebook() {
-  
-  const[book,setBook]=useState([])
+  const [book, setBook] = useState(fallbackBooks.filter((data) => data.price === 0))
 
-  useEffect(()=>{
-  async  function getBook(){
-    try{
-      const res= await axios.get("http://localhost:4001/book")
-      setBook(res.data.filter((data)=>data.price===0));
+  useEffect(() => {
+    let isMounted = true
+
+    async function getBook() {
+      try {
+        const res = await api.get('/book')
+        const data = Array.isArray(res.data) ? res.data : fallbackBooks
+        const freeBooks = data.filter((item) => Number(item.price) === 0)
+
+        if (isMounted) setBook(freeBooks.length ? freeBooks : fallbackBooks.filter((item) => item.price === 0))
+      } catch (err) {
+        console.error(err.message)
+        if (isMounted) setBook(fallbackBooks.filter((item) => item.price === 0))
+      }
     }
-    catch(err){
-       console.log(err.message)
+
+    getBook()
+
+    return () => {
+      isMounted = false
     }
-  }
-  getBook();
-  },[])
-
-
-  //const freeBooks = list.filter((data) => data.price === 0)
+  }, [])
 
   const settings = {
     dots: true,
@@ -34,39 +39,23 @@ function Freebook() {
     slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
-      {
-        breakpoint: 1280,
-        settings: { slidesToShow: 3, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 640,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
-      },
+      { breakpoint: 1280, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   }
 
   return (
-    <div className="px-8 md:px-16 lg:px-24 py-16">
-      {/* Title Section */}
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-pink-500 mb-6">
-        Free Offered Books
-      </h2>
-      <p className="text-lg md:text-xl italic text-gray-200 text-center max-w-4xl mx-auto mb-10 leading-relaxed">
-        Explore our exclusive collection of free books — carefully curated to
-        inspire, educate, and entertain. Whether you're diving into fiction,
-        self-growth, or learning something new, enjoy these gems absolutely
-        free!
+    <div className='px-8 md:px-16 lg:px-24 py-16'>
+      <h2 className='text-4xl md:text-5xl font-bold text-center text-pink-500 mb-6'>Free Offered Books</h2>
+      <p className='text-lg md:text-xl italic text-gray-200 text-center max-w-4xl mx-auto mb-10 leading-relaxed'>
+        Explore our exclusive collection of free books — carefully curated to inspire, educate, and entertain. Whether you're diving into fiction, self-growth, or learning something new, enjoy these gems absolutely free!
       </p>
 
-      {/* Slider Section */}
-      <div className="slider-container">
+      <div className='slider-container'>
         <Slider {...settings}>
           {book.map((item) => (
-            <div key={item.id} className="p-4">
+            <div key={item.id || item.title} className='p-4'>
               <Cards item={item} />
             </div>
           ))}

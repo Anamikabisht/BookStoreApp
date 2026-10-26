@@ -4,6 +4,25 @@
 
 ---
 
+## Deployment
+
+The app is configured to deploy as a Netlify frontend and a Render API, backed by MongoDB Atlas.
+
+### Backend (Render)
+
+1. Create a MongoDB Atlas database and allow the Render service to connect to it.
+2. Connect this project to Render and create a Blueprint from `render.yaml` in the project root.
+3. Set the Blueprint's `MONGODB_URI` to the Atlas connection string, `JWT_SECRET` to a unique secret, and `CLIENT_ORIGIN` to the Netlify site's origin (for example, `https://your-site.netlify.app`).
+4. Deploy the service and verify its `/health` endpoint returns `{"status":"ok"}`.
+
+### Frontend (Netlify)
+
+1. Connect the project to Netlify and set the base directory to `frontend`.
+2. Set the `VITE_API_URL` environment variable to the deployed Render service URL, without a trailing slash.
+3. Deploy. The included `frontend/netlify.toml` configures the Vite build and client-side route fallback.
+
+For local development, the frontend defaults to `http://localhost:4001`; the backend reads its MongoDB URI and JWT secret from `backend/.env`.
+
 ## Features
 
 - **User Authentication**
